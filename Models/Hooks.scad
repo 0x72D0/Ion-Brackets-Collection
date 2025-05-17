@@ -1,0 +1,27 @@
+include <../Library/GeneralBracket.scad>
+
+GENERAL_THICKNESS = 5;
+BRACKET_WIDTH = 100;
+BRACKET_HOOK_Z = 20;
+HOOK_ARM_Z = 50;
+HOOK_HEIGHT = 100;
+HOOK_WIDTH = 20;
+NUMBER_OF_BRACKET = 2;
+
+/* [ Hidden ] */
+
+BRACKET_HOOK_WIDTH = (BRACKET_WIDTH/2)-(HOOK_WIDTH/2);
+
+union()
+{   
+    translate([BRACKET_WIDTH, 0, BracketHeight(NUMBER_OF_BRACKET)])
+    rotate([90,180,0])
+    GeneralBracket(NUMBER_OF_BRACKET, BRACKET_WIDTH, GENERAL_THICKNESS);
+    translate([BRACKET_HOOK_WIDTH,0,BRACKET_HOOK_Z])
+    linear_extrude(GENERAL_THICKNESS)
+    square([HOOK_WIDTH, HOOK_HEIGHT]);
+    translate([BRACKET_HOOK_WIDTH,HOOK_HEIGHT,BRACKET_HOOK_Z+GENERAL_THICKNESS])
+    rotate([90,0,0])
+    linear_extrude(GENERAL_THICKNESS)
+    square([HOOK_WIDTH, HOOK_ARM_Z]);
+}
