@@ -1,13 +1,13 @@
 include <../Library/GeneralBracket.scad>
 
 GENERAL_THICKNESS = 5;
-BRACKETS_WIDTH = 50;
+BRACKETS_WIDTH = 60;
 NUMBER_OF_BRACKET = 2;
-PEG_BOARD_WIDTH = 200;
+PEG_BOARD_WIDTH = 250;
 PEG_BOARD_Z = 250;
-PEG_BOARD_HOLE_DIAMETER = 4.8;
-PEG_BOARD_HOLE_SPACING = 30;
-PEG_BOARD_CIRCLE_DEFINITION = 10;
+PEG_BOARD_HOLE_DIAMETER = 3.1;
+PEG_BOARD_HOLE_SPACING = 25.4;
+PEG_BOARD_CIRCLE_DEFINITION = 20;
 
 union()
 {
@@ -20,12 +20,11 @@ union()
 
 module PegBoard(width, height, hole_diameter, hole_spacing, circle_definition, thickness)
 {
-    hole_dim = hole_diameter + hole_spacing;
-    number_hole_height = floor(height / hole_dim)-1;
-    number_hole_width = floor(width / hole_dim)-1;
+    number_hole_height = floor(height / hole_spacing)-1;
+    number_hole_width = floor(width / hole_spacing)-1;
     
-    hole_height = (number_hole_height*hole_dim);
-    hole_width = (number_hole_width*hole_dim);
+    hole_height = (number_hole_height*hole_spacing);
+    hole_width = (number_hole_width*hole_spacing);
     
     hole_height_offset = (height - hole_height)/2;
     hole_width_offset = (width - hole_width)/2;
@@ -38,7 +37,7 @@ module PegBoard(width, height, hole_diameter, hole_spacing, circle_definition, t
         {
             for(hole_x = [0:number_hole_width])
             {
-                translate([hole_width_offset+(hole_dim*hole_x), hole_height_offset+(hole_dim*hole_y)])
+                translate([hole_width_offset+(hole_spacing*hole_x), hole_height_offset+(hole_spacing*hole_y)])
                 circle(d=hole_diameter, $fn=circle_definition);
             }
         }
