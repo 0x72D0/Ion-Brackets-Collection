@@ -1,6 +1,6 @@
-HOLE_HEIGHT = 13;
-HOLE_THICKNESS = 7;
-WOOD_SLAB_HEIGHT = 27;
+HOLE_HEIGHT = 12;
+HOLE_THICKNESS = 12;
+WOOD_SLAB_HEIGHT = 27.5;
 
 function BracketHeight(number_of_bracket) = ((HOLE_HEIGHT + WOOD_SLAB_HEIGHT)*(number_of_bracket))+ HOLE_HEIGHT;
 
