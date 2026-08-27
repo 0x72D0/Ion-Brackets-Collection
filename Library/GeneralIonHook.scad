@@ -2,8 +2,8 @@
 // preview tree.
 use <threadlib/threadlib.scad>
 
-BORDER_HEIGTH = 100;
-LEDGE_HEIGHT = 100;
+BORDER_HEIGTH = 74;
+LEDGE_HEIGHT = 25;
 
 module back_ledge(
     baseHeight,

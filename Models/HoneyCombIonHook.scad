@@ -2,7 +2,7 @@ use <../Library/hws_openscad_attachments_and_connectors.scad>
 include <../Library/GeneralIonHook.scad>
 
 /* [Hook Parameters] */
-WIDTH = 50;
+WIDTH = 30;
 BASE_HEIGHT = 100;
 THICKNESS = 5;
 
