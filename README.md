@@ -12,6 +12,17 @@ Collection of openscad CAD to customize your own ION-Brackets objects
 ![alt text](./Images/GenerateSTL.png)
 6. Use the generated STL to print!
 
+### Threaded HoneyCombIonHook
+
+`Models/HoneyCombIonHook.scad` uses `threadlib/threadlib.scad` to create a
+standard M8 internal thread through the rear face of the back ledge.
+`Models/Knob.scad` creates the
+matching M8 external thread.
+
+The required threadlib files are included under `Library/threadlib/`, along
+with its thread-profile and OpenSCAD utility dependencies. Open the project
+from its repository folder so OpenSCAD can resolve the local library paths.
+
 ## Current Models
 ### Basket
 ![alt text](./Images/Basket.png)

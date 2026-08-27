@@ -1,5 +1,5 @@
-include <Library/GeneralIonHook.scad>
-use <Library/hws_openscad_attachments_and_connectors.scad>
+use <../Library/hws_openscad_attachments_and_connectors.scad>
+include <../Library/GeneralIonHook.scad>
 
 /* [Hook Parameters] */
 WIDTH = 50;
@@ -20,11 +20,20 @@ CONNECTOR_X = WIDTH / 2;
 CONNECTOR_Y = -min(THICKNESS, HWS_CONNECTOR_OVERLAP);
 CONNECTOR_Z = CONNECTOR_HEIGHT;
 
-union()
+module hook_body()
 {
     GeneralIonHook(BASE_HEIGHT, WIDTH, THICKNESS);
+}
 
+module honeycomb_wall_connector()
+{
     translate([ CONNECTOR_X, CONNECTOR_Y, CONNECTOR_Z ])
     rotate([ -90, 0, 0 ])
     insert_plug_adv([[1]], tolerance = HWS_CONNECTOR_TOLERANCE, decoration = false);
+}
+
+union()
+{
+    hook_body();
+    honeycomb_wall_connector();
 }

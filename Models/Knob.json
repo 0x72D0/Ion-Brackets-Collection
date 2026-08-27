@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "New set 1": {
+            "THREAD_CIRCLE_DEFINITION": "48",
+            "THREAD_DESIGNATOR": "M8",
+            "THREAD_GRIP_START": "5.625",
+            "THREAD_TURNS": "6"
+        },
+        "New set 2": {
+            "HANDLE_LENGTH": "6",
+            "HANDLE_WIDTH": "6",
+            "HUB_DIAMETER": "10",
+            "SPOKE_COUNT": "8",
+            "SPOKE_WIDTH": "5",
+            "THREAD_CIRCLE_DEFINITION": "48",
+            "THREAD_DESIGNATOR": "M8",
+            "THREAD_GRIP_START": "5.625",
+            "THREAD_TURNS": "4",
+            "WHEEL_DIAMETER": "30",
+            "WHEEL_THICKNESS": "5"
+        }
+    }
+}
